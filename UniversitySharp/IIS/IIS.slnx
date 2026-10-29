@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="../IIS.Application/IIS.Application.csproj" />
-  <Project Path="../IIS.Domain/IIS.Domain.csproj" />
-  <Project Path="../IIS.Infrastructure/IIS.Infrastructure.csproj" />
-  <Project Path="../IIS.Tests.Integration/IIS.Tests.Integration.csproj" />
-  <Project Path="../IIS.Unit.Tests/IIS.Tests.Unit.csproj" Id="373e0f8f-4395-46c2-b301-7a348b20eddb" />
-  <Project Path="IIS.csproj" />
-</Solution>
