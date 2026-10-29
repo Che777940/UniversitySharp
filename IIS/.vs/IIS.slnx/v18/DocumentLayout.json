@@ -1,0 +1,264 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UniversityCshatp\\IIS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\enums\\semester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\enums\\lessontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\academics\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\grading\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\grading\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\identity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\identity\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\identity\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\scheduling\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\scheduling\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\structure\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\structure\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E106D5A-CC11-DF70-3CD8-7E681513DDBB}|..\\IIS.Domain\\IIS.Domain.csproj|d:\\universitycshatp\\iis.domain\\entities\\structure\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\UserRole.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Enums\\UserRole.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\UserRole.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Enums\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:27.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Semester.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\Semester.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Enums\\Semester.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\Semester.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Enums\\Semester.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:25.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LessonType.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\LessonType.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Enums\\LessonType.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Enums\\LessonType.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Enums\\LessonType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:24.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Academics\\Subject.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Academics\\Subject.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Academics\\Subject.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Academics\\Subject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:19.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Academics\\Course.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Academics\\Course.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Academics\\Course.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Academics\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:18.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Grade.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Grading\\Grade.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Grading\\Grade.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Grading\\Grade.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Grading\\Grade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:16.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Grading\\Attendance.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Grading\\Attendance.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Grading\\Attendance.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Grading\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:15.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\User.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Identity\\User.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\User.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Identity\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:14.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Teacher.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\Teacher.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Identity\\Teacher.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\Teacher.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Identity\\Teacher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:13.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\Student.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Identity\\Student.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Identity\\Student.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Identity\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:13.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Schedule.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Scheduling\\Schedule.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Scheduling\\Schedule.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Scheduling\\Schedule.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Scheduling\\Schedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:11.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Classroom.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Scheduling\\Classroom.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Scheduling\\Classroom.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Scheduling\\Classroom.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Scheduling\\Classroom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:10.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Group.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Group.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Structure\\Group.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Group.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Structure\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:08.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Faculty.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Faculty.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Structure\\Faculty.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Faculty.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Structure\\Faculty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:06.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Department.cs",
+              "RelativeDocumentMoniker": "..\\IIS.Domain\\Entities\\Structure\\Department.cs",
+              "ToolTip": "D:\\UniversityCshatp\\IIS.Domain\\Entities\\Structure\\Department.cs",
+              "RelativeToolTip": "..\\IIS.Domain\\Entities\\Structure\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:21:01.281Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
