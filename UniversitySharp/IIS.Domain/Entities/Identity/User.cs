@@ -1,11 +1,12 @@
-﻿using IIS.Domain.Enums;
+﻿using IIS.Domain.Common;
+using IIS.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace IIS.Domain.Entities.Identity
 {
-    public class User
+    public class User : BaseEntity
     {
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
