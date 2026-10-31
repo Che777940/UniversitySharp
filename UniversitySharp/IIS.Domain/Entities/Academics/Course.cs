@@ -2,11 +2,11 @@
 using IIS.Domain.Entities.Grading;
 using IIS.Domain.Entities.Identity;
 using IIS.Domain.Entities.Scheduling;
+using IIS.Domain.Entities.Structure;
 using IIS.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace IIS.Domain.Entities.Academics
 {

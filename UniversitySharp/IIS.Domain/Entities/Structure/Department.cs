@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using IIS.Domain.Common;
 using IIS.Domain.Entities.Identity;
 
 namespace IIS.Domain.Entities.Structure
 {
     // Здесь будет храниться кафедру
-    public class Department
+    public class Department : BaseEntity
     {
     public string Name { get; set; } = string.Empty;
     public Guid FacultyId { get; set; }

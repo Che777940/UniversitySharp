@@ -1,4 +1,5 @@
-﻿using IIS.Domain.Entities.Academics;
+﻿using IIS.Domain.Common;
+using IIS.Domain.Entities.Academics;
 using IIS.Domain.Entities.Structure;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace IIS.Domain.Entities.Identity
 {
-    public class Teacher
+    public class Teacher : BaseEntity
     {
         public Guid UserId { get; set; }
         public string FirstName { get; set; } = string.Empty;
