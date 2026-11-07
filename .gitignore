@@ -1,0 +1,22 @@
+﻿# Папки сборки
+[Bb]in/
+[Oo]bj/
+
+# Папка настроек Visual Studio
+.vs/
+
+# Файлы настроек пользователя
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Кэши
+*.dtbcache.v2
+.vs/
+
+applicationhost.config
+
+*.tmp
+*.log
+*.lock
