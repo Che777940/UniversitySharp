@@ -1,0 +1,27 @@
+﻿@model IEnumerable<IIS.Domain.Entities.Academics.Subject>
+@{
+    ViewData["Title"] = "Дисциплины";
+}
+
+<div class="card">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+        <h5 class="mb-0">Учебные дисциплины</h5>
+        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Добавить</a>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr><th>Название</th><th>Кредиты (ЗЕТ)</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="align-middle">
+                        <td><strong>@item.Name</strong></td>
+                        <td><span class="badge bg-secondary">@item.Credits</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,13 +1,16 @@
 ﻿using IIS.Application.DTOs;
+using IIS.Application.Interfaces;
 using IIS.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using IIS.Application.Interfaces;
 
 namespace IIS.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
+    [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
         private readonly IStudentService _studentService;

@@ -2,9 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 using IIS.Infrastructure.Data;
 using IIS.Infrastructure.Repositories;
 
@@ -20,6 +17,10 @@ namespace IIS.Infrastructure
             services.AddScoped<IGroupRepository, GroupRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IFacultyRepository, FacultyRepository>();
+            services.AddScoped<ISubjectRepository, SubjectRepository>();
+            services.AddScoped<IClassroomRepository, ClassroomRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
     }

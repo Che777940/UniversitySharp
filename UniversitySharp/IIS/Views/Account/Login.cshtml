@@ -1,0 +1,31 @@
+﻿@model IIS.Application.DTOs.LoginDto
+@{ ViewData["Title"] = "Вход в систему"; }
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0"><i class="fas fa-sign-in-alt"></i> Вход</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="admin@university.ru" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Пароль</label>
+                        <input asp-for="Password" type="password" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-3">Войти</button>
+                    <div class="text-center">
+                    <small class="text-muted">Нет аккаунта?</small><br/>
+                    <a asp-action="RegisterStudent" class="text-decoration-none fw-bold">Регистрация Студента</a> | 
+                    <a asp-action="RegisterTeacher" class="text-decoration-none fw-bold">Регистрация Преподавателя</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

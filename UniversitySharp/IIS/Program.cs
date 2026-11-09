@@ -1,8 +1,9 @@
-using IIS.Infrastructure;
 using IIS.Application.Services; 
-using Microsoft.EntityFrameworkCore;
-using IIS.Infrastructure.Data;
 using IIS.Domain.Entities.Structure;
+using IIS.Infrastructure;
+using IIS.Infrastructure.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 namespace IIS
 {
@@ -22,6 +23,21 @@ namespace IIS
             builder.Services.AddScoped<IGroupService, GroupService>();
             builder.Services.AddScoped<IStudentService, StudentService>();
             builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+            builder.Services.AddScoped<ISubjectService, SubjectService>();
+            builder.Services.AddScoped<IClassroomService, ClassroomService>();
+            builder.Services.AddScoped<ITeacherService, TeacherService>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.SlidingExpiration = true;
+            });
+
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -55,7 +71,6 @@ namespace IIS
                     context.SaveChanges();
                 }
             }
-
 
 
             if (app.Environment.IsDevelopment())

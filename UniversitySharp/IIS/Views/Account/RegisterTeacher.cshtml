@@ -1,0 +1,55 @@
+﻿@model IIS.Application.DTOs.RegisterTeacherDto
+@{ ViewData["Title"] = "Регистрация преподавателя"; }
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card shadow border-0">
+            <div class="card-header bg-primary text-white py-3">
+                <h4 class="mb-0"><i class="fas fa-chalkboard-teacher"></i> Регистрация преподавателя</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="RegisterTeacher" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="LastName" class="form-label">Фамилия</label>
+                            <input asp-for="LastName" class="form-control" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="FirstName" class="form-label">Имя</label>
+                            <input asp-for="FirstName" class="form-control" required />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="Degree" class="form-label">Ученая степень (необязательно)</label>
+                            <input asp-for="Degree" class="form-control" placeholder="К.т.н., Доцент" />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="DepartmentId" class="form-label">Кафедра</label>
+                            <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments" required>
+                                <option value="">-- Выберите кафедру --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email (Логин)</label>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="teacher@university.ru" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Пароль</label>
+                        <input asp-for="Password" type="password" class="form-control" required />
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <a asp-action="Login" class="text-decoration-none">Уже есть аккаунт? Войти</a>
+                        <button type="submit" class="btn btn-primary px-4">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

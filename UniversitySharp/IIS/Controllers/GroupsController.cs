@@ -2,10 +2,12 @@
 using IIS.Application.Interfaces;
 using IIS.Application.Services;
 using IIS.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IIS.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class GroupsController : Controller
     {
         private readonly IGroupService _groupService;
