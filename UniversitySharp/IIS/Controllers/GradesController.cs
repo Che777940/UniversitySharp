@@ -56,5 +56,14 @@ namespace IIS.Controllers
             var courseList = courses.Select(c => new { c.Id, Name = $"{c.Subject?.Name} (Гр. {c.Group?.Name})" });
             ViewBag.Courses = new SelectList(courseList, "Id", "Name", courseId);
         }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin,Teacher")]
+        public async Task<IActionResult> Delete(Guid id, Guid studentId)
+        {
+            await _gradeService.DeleteAsync(id);
+            TempData["Success"] = "Оценка удалена.";
+            return RedirectToAction("Grades", "Students", new { id = studentId }); 
+        }
     }
 }

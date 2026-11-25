@@ -45,18 +45,19 @@
                             <td>
                                 <span class="badge bg-info text-dark fs-6">@student.GroupName</span>
                             </td>
-                            <td class="text-end">
-                                <button class="btn btn-sm btn-outline-primary" disabled title="Редактировать">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" disabled title="Удалить">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
+                            
                             <td class="text-end">
                                 <a asp-action="Grades" asp-route-id="@student.Id" class="btn btn-sm btn-outline-warning" title="Табло оценок">
                                     <i class="fas fa-star"></i> Оценки
                                 </a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <form asp-action="Delete" asp-route-id="@student.Id" method="post" class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить студента? Это действие необратимо.');">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Удалить">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                }
                             </td>
                         </tr>
                     }

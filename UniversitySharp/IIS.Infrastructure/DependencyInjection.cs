@@ -23,6 +23,8 @@ namespace IIS.Infrastructure
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IGradeRepository, GradeRepository>();
+            services.AddScoped<IScheduleRepository, ScheduleRepository>();
+            services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             return services;
         }
     }

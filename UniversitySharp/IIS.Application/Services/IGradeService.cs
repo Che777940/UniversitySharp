@@ -9,5 +9,7 @@ namespace IIS.Application.Services
     {
         Task<List<GradeDto>> GetStudentGradesAsync(Guid studentId);
         Task AddGradeAsync(CreateGradeDto dto);
+
+        Task DeleteAsync(Guid id);
     }
 }

@@ -65,6 +65,9 @@
                 </div>
 
                 <a asp-controller="Home" asp-action="Index" class="@(currentController == "Home" ? "active" : "")"><i class="fas fa-home"></i> Дашборд</a>
+                <a asp-controller="Faculties" asp-action="Index" class="@(currentController == "Faculties" ? "active" : "")">
+                    <i class="fas fa-university"></i> Факультеты
+                </a>
 
                 @if (User.IsInRole("Admin"))
                 {
@@ -77,9 +80,11 @@
                     <a asp-controller="Subjects" asp-action="Index" class="@(currentController == "Subjects" ? "active" : "")"><i class="fas fa-book"></i> Дисциплины</a>
                     <a asp-controller="Classrooms" asp-action="Index" class="@(currentController == "Classrooms" ? "active" : "")"><i class="fas fa-door-open"></i> Аудитории</a>
                     <a asp-controller="Courses" asp-action="Index" class="@(currentController == "Courses" ? "active" : "")"><i class="fas fa-layer-group"></i> Курсы</a>
+                    <a asp-controller="Schedule" asp-action="Index" class="@(currentController == "Schedule" ? "active" : "")">
+                        <i class="fas fa-calendar-alt"></i> Расписание
+                    </a>
                 }
 
-                <a href="#"><i class="fas fa-calendar-alt"></i> Расписание</a>
             </nav>
 
             <main class="col-md-10 ms-sm-auto main-content">

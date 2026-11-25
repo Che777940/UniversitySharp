@@ -3,6 +3,7 @@ using IIS.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using IIS.Domain.Entities.Grading;
 
 namespace IIS.Application.Services
 {
@@ -32,7 +33,7 @@ namespace IIS.Application.Services
 
         public async Task AddGradeAsync(CreateGradeDto dto)
         {
-            var grade = new IIS.Domain.Entities.Grading.Grade
+            var grade = new Grade
             {
                 Id = Guid.NewGuid(),
                 StudentId = dto.StudentId,
@@ -43,6 +44,12 @@ namespace IIS.Application.Services
                 CreatedAt = DateTime.UtcNow
             };
             await _repository.AddAsync(grade);
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var grade = await _repository.GetByIdAsync(id);
+            if (grade != null) await _repository.DeleteAsync(grade);
         }
     }
 }

@@ -76,5 +76,21 @@ namespace IIS.Controllers
 
             return View(grades);
         }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")] 
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                await _studentService.DeleteAsync(id);
+                TempData["Success"] = "Студент успешно удален!";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Не удалось удалить студента. Возможно, у него есть связанные данные (оценки, посещаемость).";
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

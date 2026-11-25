@@ -1,10 +1,11 @@
 ﻿using IIS.Application.Interfaces;
 using IIS.Domain.Entities.Grading;
+using IIS.Domain.Entities.Identity;
 using IIS.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
 
 namespace IIS.Infrastructure.Repositories
 {
@@ -12,6 +13,11 @@ namespace IIS.Infrastructure.Repositories
     {
         private readonly ApplicationDbContext _context;
         public GradeRepository(ApplicationDbContext context) => _context = context;
+
+        public async Task<Grade?> GetByIdAsync(Guid id)
+        {
+            return await _context.Grades.FirstOrDefaultAsync(g => g.Id == id);
+        }
 
         public async Task<List<Grade>> GetByStudentIdAsync(Guid studentId)
         {
@@ -28,6 +34,12 @@ namespace IIS.Infrastructure.Repositories
         public async Task AddAsync(Grade grade)
         {
             await _context.Grades.AddAsync(grade);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Grade grade)
+        {
+            _context.Grades.Remove(grade);
             await _context.SaveChangesAsync();
         }
     }

@@ -72,10 +72,7 @@ namespace IIS.Application.Services
         public async Task DeleteAsync(Guid id)
         {
             var student = await _studentRepository.GetByIdAsync(id);
-            if (student == null)
-            {
-                throw new Exception("Студент не найден");
-            }
+            if (student == null) throw new Exception("Студент не найден");
 
             await _studentRepository.DeleteAsync(student);
         }

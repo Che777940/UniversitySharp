@@ -8,5 +8,7 @@ namespace IIS.Application.Interfaces
     public interface IFacultyRepository
     {
         Task<List<Faculty>> GetAllAsync();
+        Task<Faculty?> GetByIdAsync(Guid id); 
+        Task AddAsync(Faculty faculty);       
     }
 }

@@ -7,7 +7,9 @@ namespace IIS.Application.Interfaces
 {
     public interface IGradeRepository
     {
+        Task<Grade?> GetByIdAsync(Guid id);
         Task<List<Grade>> GetByStudentIdAsync(Guid studentId);
         Task AddAsync(Grade grade);
+        Task DeleteAsync(Grade grade);
     }
 }

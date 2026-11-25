@@ -29,6 +29,8 @@ namespace IIS
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<ICourseService, CourseService>();
             builder.Services.AddScoped<IGradeService, GradeService>();
+            builder.Services.AddScoped<IScheduleService,ScheduleService>();
+            builder.Services.AddScoped<IFacultyService, FacultyService>();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
@@ -58,18 +60,6 @@ namespace IIS
                         CreatedAt = DateTime.UtcNow
                     };
                     context.Users.Add(admin);
-                    context.SaveChanges();
-                }
-
-                if (!context.Faculties.Any())
-                {
-                    context.Faculties.Add(new Faculty
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Факультет Информационных Технологий",
-                        ShortName = "ФИТ",
-                        CreatedAt = DateTime.UtcNow
-                    });
                     context.SaveChanges();
                 }
             }

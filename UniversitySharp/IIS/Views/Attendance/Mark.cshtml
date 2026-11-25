@@ -1,0 +1,46 @@
+﻿@model IIS.Application.DTOs.AttendanceDto
+@{
+    ViewData["Title"] = "Отметка посещаемости";
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3">
+        <h5 class="mb-0">Посещаемость: @ViewBag.SubjectName (Дата: @Model.Date.ToString("dd.MM.yyyy"))</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Mark" method="post">
+            <input type="hidden" asp-for="ScheduleId" />
+            <input type="hidden" asp-for="Date" />
+
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Студент</th>
+                        <th class="text-center">Присутствовал</th>
+                        <th>Причина отсутствия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Students.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                <input type="hidden" asp-for="Students[i].StudentId" />
+                                <input type="hidden" asp-for="Students[i].FullName" />
+                                <strong>@Model.Students[i].FullName</strong>
+                            </td>
+                            <td class="text-center">
+                                <input asp-for="Students[i].IsPresent" class="form-check-input fs-5" type="checkbox" />
+                            </td>
+                            <td>
+                                <input asp-for="Students[i].Reason" class="form-control" placeholder="Уважительная / Болезнь" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-success mt-3"><i class="fas fa-save"></i> Сохранить журнал</button>
+        </form>
+    </div>
+</div>

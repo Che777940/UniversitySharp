@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<IIS.Application.DTOs.GradeDto>
 @{
     ViewData["Title"] = "Табло оценок";
+    var canDelete = User.IsInRole("Admin") || User.IsInRole("Teacher");
 }
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -9,9 +10,12 @@
         <p class="text-muted mb-0">Студент: <strong>@ViewBag.StudentName</strong></p>
     </div>
     <div>
-        <a asp-controller="Grades" asp-action="Create" asp-route-studentId="@ViewBag.StudentId" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Выставить оценку
-        </a>
+        @if (canDelete)
+        {
+            <a asp-controller="Grades" asp-action="Create" asp-route-studentId="@ViewBag.StudentId" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Выставить оценку
+            </a>
+        }
         <a asp-action="Index" class="btn btn-outline-secondary ms-2">Назад</a>
     </div>
 </div>
@@ -26,6 +30,10 @@
                     <th>Дата</th>
                     <th class="text-center">Оценка</th>
                     <th>Комментарий</th>
+                    @if (canDelete)
+                    {
+                        <th class="text-end">Действия</th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -47,13 +55,24 @@
                                 </span>
                             </td>
                             <td class="text-muted small">@(string.IsNullOrEmpty(grade.Comment) ? "—" : grade.Comment)</td>
+
+                            @if (canDelete)
+                            {
+                                <td class="text-end">
+                                    <form asp-controller="Grades" asp-action="Delete" asp-route-id="@grade.Id" asp-route-studentId="@ViewBag.StudentId" method="post" class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить эту оценку?');">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Удалить оценку">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            }
                         </tr>
                     }
                 }
                 else
                 {
                     <tr>
-                        <td colspan="5" class="text-center py-5 text-muted">
+                        <td colspan="@(canDelete ? 6 : 5)" class="text-center py-5 text-muted">
                             <i class="fas fa-clipboard-list fa-3x mb-3 opacity-50"></i>
                             <h5>Оценок пока нет</h5>
                             <p>Как только преподаватель выставит оценку, она появится здесь.</p>

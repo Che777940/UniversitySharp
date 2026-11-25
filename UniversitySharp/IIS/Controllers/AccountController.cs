@@ -1,8 +1,10 @@
 ﻿using IIS.Application.DTOs;
 using IIS.Application.Interfaces;
 using IIS.Application.Services;
+using IIS.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security.Claims;
@@ -15,11 +17,21 @@ namespace IIS.Controllers
         private readonly IGroupRepository _groupRepository;
         private readonly IDepartmentRepository _departmentRepository;
 
-        public AccountController(IAuthService authService, IGroupRepository groupRepository, IDepartmentRepository departmentRepository)
+        private readonly IStudentRepository _studentRepository;
+
+        private readonly ITeacherRepository _teacherRepository;
+
+        public AccountController(IAuthService authService,
+                                 IGroupRepository groupRepository, 
+                                 IDepartmentRepository departmentRepository, 
+                                 IStudentRepository studentRepository, 
+                                 ITeacherRepository teacherRepository)
         {
             _authService = authService;
             _groupRepository = groupRepository;
             _departmentRepository = departmentRepository;
+            _studentRepository = studentRepository;
+            _teacherRepository = teacherRepository;
         }
 
         [HttpGet]
@@ -53,10 +65,11 @@ namespace IIS.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet] 
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpGet]
@@ -121,6 +134,45 @@ namespace IIS.Controllers
                 ViewBag.Departments = new SelectList(departments, "Id", "Name", dto.DepartmentId);
                 return View(dto);
             }
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = Guid.Parse(userIdStr!);
+            var role = User.FindFirstValue(ClaimTypes.Role);
+
+            var profile = new ProfileDto
+            {
+                Email = User.FindFirstValue(ClaimTypes.Email)!,
+                Role = role!
+            };
+
+            if (role == "Student")
+            {
+                var student = (await _studentRepository.GetAllAsync()).FirstOrDefault(s => s.UserId == userId);
+                if (student != null)
+                {
+                    profile.FirstName = student.FirstName;
+                    profile.LastName = student.LastName;
+                    profile.GroupName = student.Group?.Name;
+                    profile.RecordBookNumber = student.RecordBookNumber;
+                }
+            }
+            else if (role == "Teacher")
+            {
+                var teacher = (await _teacherRepository.GetAllAsync()).FirstOrDefault(t => t.UserId == userId);
+                if (teacher != null)
+                {
+                    profile.FirstName = teacher.FirstName;
+                    profile.LastName = teacher.LastName;
+                    profile.Degree = teacher.Degree;
+                    profile.DepartmentName = teacher.Department?.Name;
+                }
+            }
+
+            return View(profile);
         }
     }
 }

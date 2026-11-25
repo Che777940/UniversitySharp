@@ -1,0 +1,28 @@
+﻿@model IIS.Application.DTOs.CreateFacultyDto
+@{
+    ViewData["Title"] = "Новый факультет";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white py-3"><h5 class="mb-0">Добавление факультета</h5></div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Название факультета</label>
+                        <input asp-for="Name" class="form-control" placeholder="Факультет Информационных Технологий" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ShortName" class="form-label">Аббревиатура</label>
+                        <input asp-for="ShortName" class="form-control" placeholder="ФИТ" required />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+                        <button type="submit" class="btn btn-success">Создать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

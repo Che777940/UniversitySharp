@@ -1,0 +1,40 @@
+﻿@model IEnumerable<IIS.Domain.Entities.Grading.Attendance>
+@{
+    ViewData["Title"] = "Мои пропуски";
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3">
+        <h5 class="mb-0"><i class="fas fa-user-check text-primary me-2"></i>Журнал посещаемости</h5>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                    <th>Причина</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderByDescending(a => a.Date))
+                {
+                    <tr>
+                        <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                        <td>
+                            @if (item.IsPresent)
+                            {
+                                <span class="badge bg-success">Присутствовал</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Отсутствовал</span>
+                            }
+                        </td>
+                        <td class="text-muted">@(string.IsNullOrEmpty(item.Reason) ? "—" : item.Reason)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
