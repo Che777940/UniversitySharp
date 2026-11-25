@@ -1,9 +1,11 @@
 ﻿using IIS.Application.DTOs;
 using IIS.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IIS.Controllers
 {
+    [Authorize]
     public class SubjectsController : Controller
     {
         private readonly ISubjectService _service;

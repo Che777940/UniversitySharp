@@ -6,6 +6,7 @@ namespace IIS.Application.DTOs
 {
     public class CreateTeacherDto
     {
+        public string Password { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string? Degree { get; set; } 

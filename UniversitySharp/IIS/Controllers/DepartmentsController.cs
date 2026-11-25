@@ -1,10 +1,12 @@
 ﻿using IIS.Application.DTOs;
 using IIS.Application.Interfaces;
 using IIS.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IIS.Controllers
 {
+    [Authorize]
     public class DepartmentsController : Controller
     {
         private readonly IDepartmentService _departmentService;

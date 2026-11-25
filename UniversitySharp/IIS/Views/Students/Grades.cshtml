@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IIS.Application.DTOs.GradeDto>
+@{
+    ViewData["Title"] = "Табло оценок";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold mb-1"><i class="fas fa-star text-warning"></i> Успеваемость</h3>
+        <p class="text-muted mb-0">Студент: <strong>@ViewBag.StudentName</strong></p>
+    </div>
+    <div>
+        <a asp-controller="Grades" asp-action="Create" asp-route-studentId="@ViewBag.StudentId" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Выставить оценку
+        </a>
+        <a asp-action="Index" class="btn btn-outline-secondary ms-2">Назад</a>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Дисциплина</th>
+                    <th>Преподаватель</th>
+                    <th>Дата</th>
+                    <th class="text-center">Оценка</th>
+                    <th>Комментарий</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var grade in Model)
+                    {
+                        string badgeClass = grade.Value >= 5 ? "bg-success" :
+                                           (grade.Value == 4 ? "bg-primary" :
+                                           (grade.Value == 3 ? "bg-warning text-dark" : "bg-danger"));
+
+                        <tr>
+                            <td class="fw-bold">@grade.SubjectName</td>
+                            <td>@grade.TeacherName</td>
+                            <td>@grade.Date.ToString("dd.MM.yyyy")</td>
+                            <td class="text-center">
+                                <span class="badge @badgeClass fs-5 rounded-circle d-flex justify-content-center align-items-center mx-auto" style="width: 40px; height: 40px;">
+                                    @grade.Value
+                                </span>
+                            </td>
+                            <td class="text-muted small">@(string.IsNullOrEmpty(grade.Comment) ? "—" : grade.Comment)</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center py-5 text-muted">
+                            <i class="fas fa-clipboard-list fa-3x mb-3 opacity-50"></i>
+                            <h5>Оценок пока нет</h5>
+                            <p>Как только преподаватель выставит оценку, она появится здесь.</p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

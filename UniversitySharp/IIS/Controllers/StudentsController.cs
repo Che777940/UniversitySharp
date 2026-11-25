@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace IIS.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
 
     [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
@@ -16,10 +14,13 @@ namespace IIS.Controllers
         private readonly IStudentService _studentService;
         private readonly IGroupRepository _groupRepository;
 
-        public StudentsController(IStudentService studentService, IGroupRepository groupRepository)
+        private readonly IGradeService _gradeService;
+
+        public StudentsController(IStudentService studentService, IGroupRepository groupRepository, IGradeService gradeService)
         {
             _studentService = studentService;
             _groupRepository = groupRepository;
+            _gradeService = gradeService;
         }
 
         [HttpGet]
@@ -30,7 +31,7 @@ namespace IIS.Controllers
             return View();
         }
 
-
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateStudentDto dto)
         {
@@ -53,6 +54,27 @@ namespace IIS.Controllers
                 ViewBag.Groups = new SelectList(groups, "Id", "Name", dto.GroupId);
                 return View(dto);
             }
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var students = await _studentService.GetAllAsync();
+
+            return View(students);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Grades(Guid id)
+        {
+            var student = await _studentService.GetByIdAsync(id);
+            if (student == null) return NotFound();
+
+            var grades = await _gradeService.GetStudentGradesAsync(id);
+
+            ViewBag.StudentName = $"{student.LastName} {student.FirstName}";
+            ViewBag.StudentId = id;
+
+            return View(grades);
         }
     }
 }

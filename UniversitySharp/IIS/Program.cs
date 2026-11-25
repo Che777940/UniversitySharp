@@ -27,6 +27,8 @@ namespace IIS
             builder.Services.AddScoped<IClassroomService, ClassroomService>();
             builder.Services.AddScoped<ITeacherService, TeacherService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<ICourseService, CourseService>();
+            builder.Services.AddScoped<IGradeService, GradeService>();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
@@ -50,7 +52,7 @@ namespace IIS
                     {
                         Id = Guid.NewGuid(),
                         Email = "admin@university.ru",
-                        PasswordHash = "admin123", 
+                        PasswordHash = BCrypt.Net.BCrypt.HashPassword("AdminIIS1234"),
                         Role = IIS.Domain.Enums.UserRole.Admin,
                         IsActive = true,
                         CreatedAt = DateTime.UtcNow

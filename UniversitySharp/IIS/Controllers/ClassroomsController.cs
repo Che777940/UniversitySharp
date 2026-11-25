@@ -1,9 +1,11 @@
 ﻿using IIS.Application.DTOs;
 using IIS.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IIS.Controllers
 {
+    [Authorize]
     public class ClassroomsController : Controller
     {
         private readonly IClassroomService _classroomService;

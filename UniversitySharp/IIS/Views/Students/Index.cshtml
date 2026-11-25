@@ -3,13 +3,17 @@
     ViewData["Title"] = "Студенты";
 }
 
-<div class="card">
+<div class="card shadow-sm border-0">
     <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-        <h5 class="mb-0">Список студентов</h5>
-        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Добавить студента</a>
+        <h5 class="mb-0"><i class="fas fa-user-graduate text-primary me-2"></i>Список студентов</h5>
+
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Добавить студента
+        </a>
     </div>
+
     <div class="card-body p-0">
-        <table class="table table-hover mb-0">
+        <table class="table table-hover table-striped mb-0 align-middle">
             <thead class="table-light">
                 <tr>
                     <th>Студент</th>
@@ -23,23 +27,36 @@
                 {
                     foreach (var student in Model)
                     {
-                        <tr class="align-middle">
+                        <tr>
                             <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px; font-weight: bold;">
-                                        @student.FirstName.Substring(0, 1)@student.LastName.Substring(0, 1)
+                                <div class="d-flex align-items-center py-2">
+                                    <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-3 shadow-sm" style="width: 40px; height: 40px; font-weight: bold;">
+                                        @(student.FirstName?.Substring(0, 1))@(student.LastName?.Substring(0, 1))
                                     </div>
                                     <div>
-                                        <h6 class="mb-0">@student.LastName @student.FirstName</h6>
+                                        <h6 class="mb-0 fw-bold">@student.LastName @student.FirstName</h6>
                                         <small class="text-muted">Студент</small>
                                     </div>
                                 </div>
                             </td>
-                            <td><span class="badge bg-secondary">@student.RecordBookNumber</span></td>
-                            <td><span class="badge bg-info text-dark">@student.GroupName</span></td>
+                            <td>
+                                <span class="badge bg-secondary fs-6">@student.RecordBookNumber</span>
+                            </td>
+                            <td>
+                                <span class="badge bg-info text-dark fs-6">@student.GroupName</span>
+                            </td>
                             <td class="text-end">
-                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-sm btn-outline-primary" disabled title="Редактировать">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" disabled title="Удалить">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                            <td class="text-end">
+                                <a asp-action="Grades" asp-route-id="@student.Id" class="btn btn-sm btn-outline-warning" title="Табло оценок">
+                                    <i class="fas fa-star"></i> Оценки
+                                </a>
                             </td>
                         </tr>
                     }
@@ -47,10 +64,12 @@
                 else
                 {
                     <tr>
-                        <td colspan="4" class="text-center py-4 text-muted">
-                            <i class="fas fa-folder-open fa-2x mb-2"></i><br />
-                            Студентов пока нет. Добавьте первого!
+                        <td colspan="4" class="text-center py-5 text-muted">
+                            <i class="fas fa-folder-open fa-3x mb-3 text-secondary opacity-50"></i>
+                            <h5>Студентов пока нет</h5>
+                            <p class="mb-0">Нажмите кнопку «Добавить студента», чтобы создать первую запись.</p>
                         </td>
+
                     </tr>
                 }
             </tbody>

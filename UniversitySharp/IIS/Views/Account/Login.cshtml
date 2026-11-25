@@ -1,31 +1,102 @@
 ﻿@model IIS.Application.DTOs.LoginDto
-@{ ViewData["Title"] = "Вход в систему"; }
+@{
+    ViewData["Title"] = "Вход в систему";
+    Layout = null; 
+}
 
-<div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-        <div class="card shadow-lg border-0">
-            <div class="card-header bg-primary text-white text-center py-3">
-                <h4 class="mb-0"><i class="fas fa-sign-in-alt"></i> Вход</h4>
-            </div>
-            <div class="card-body p-4">
-                <form asp-action="Login" method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="mb-3">
-                        <label asp-for="Email" class="form-label">Email</label>
-                        <input asp-for="Email" class="form-control" placeholder="admin@university.ru" required />
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход - UniSys</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+            body {
+                background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .login-card {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+                overflow: hidden;
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .login-header {
+                background: #fff;
+                padding: 30px 30px 10px;
+                text-align: center;
+            }
+
+                .login-header i {
+                    font-size: 3rem;
+                    color: #0d6efd;
+                    margin-bottom: 15px;
+                }
+
+            .login-body {
+                padding: 30px;
+            }
+
+            .form-control {
+                border-radius: 10px;
+                padding: 12px 15px;
+            }
+
+            .btn-primary {
+                border-radius: 10px;
+                padding: 12px;
+                font-weight: bold;
+                background: #0d6efd;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <i class="fas fa-university"></i>
+            <h3 class="fw-bold text-dark">UniSys</h3>
+            <p class="text-muted">Портал для студентов и сотрудников</p>
+        </div>
+        <div class="login-body">
+            <form asp-action="Login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label text-muted small fw-bold">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-envelope text-muted"></i></span>
+                        <input asp-for="Email" class="form-control border-start-0 bg-light" placeholder="student@university.ru" required />
                     </div>
-                    <div class="mb-3">
-                        <label asp-for="Password" class="form-label">Пароль</label>
-                        <input asp-for="Password" type="password" class="form-control" required />
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label text-muted small fw-bold">Пароль</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-lock text-muted"></i></span>
+                        <input asp-for="Password" type="password" class="form-control border-start-0 bg-light" placeholder="••••••••" required />
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 mb-3">Войти</button>
-                    <div class="text-center">
-                    <small class="text-muted">Нет аккаунта?</small><br/>
-                    <a asp-action="RegisterStudent" class="text-decoration-none fw-bold">Регистрация Студента</a> | 
-                    <a asp-action="RegisterTeacher" class="text-decoration-none fw-bold">Регистрация Преподавателя</a>
-                    </div>
-                </form>
-            </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-3">
+                    Войти <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+
+                <div class="text-center mt-3">
+                    <span class="text-muted small">Впервые у нас?</span><br />
+                    <a asp-action="RegisterStudent" class="text-decoration-none fw-bold text-primary">Зарегистрироваться как студент</a>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</body>
+</html>

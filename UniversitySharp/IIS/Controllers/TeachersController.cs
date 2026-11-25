@@ -1,20 +1,24 @@
 ﻿using IIS.Application.DTOs;
 using IIS.Application.Interfaces;
 using IIS.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace IIS.Controllers
 {
+    [Authorize]
     public class TeachersController : Controller
     {
         private readonly ITeacherService _teacherService;
         private readonly IDepartmentRepository _departmentRepository;
+        private readonly IAuthService _authService;
 
-        public TeachersController(ITeacherService teacherService, IDepartmentRepository departmentRepository)
+        public TeachersController(ITeacherService teacherService, IDepartmentRepository departmentRepository, IAuthService authService)
         {
             _teacherService = teacherService;
             _departmentRepository = departmentRepository;
+            _authService = authService;
         }
 
         public async Task<IActionResult> Index()
@@ -41,8 +45,18 @@ namespace IIS.Controllers
                 return View(dto);
             }
 
-            await _teacherService.CreateAsync(dto);
-            TempData["Success"] = "Преподаватель успешно добавлен!";
+            var registerDto = new RegisterTeacherDto
+            {
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Degree = dto.Degree,
+                DepartmentId = dto.DepartmentId,
+                Email = dto.Email,
+                Password = dto.Password
+            };
+
+            await _authService.RegisterTeacherAsync(registerDto);
+            TempData["Success"] = "Преподаватель успешно добавлен и может войти в систему!";
             return RedirectToAction(nameof(Index));
         }
     }

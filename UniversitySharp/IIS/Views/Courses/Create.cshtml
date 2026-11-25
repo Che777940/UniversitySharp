@@ -1,0 +1,50 @@
+﻿@model IIS.Application.DTOs.CreateCourseDto
+@{
+    ViewData["Title"] = "Новый курс";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-white py-3"><h5 class="mb-0">Назначение курса</h5></div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="SubjectId" class="form-label">Дисциплина</label>
+                            <select asp-for="SubjectId" class="form-select" asp-items="ViewBag.Subjects" required>
+                                <option value="">-- Выберите дисциплину --</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="TeacherId" class="form-label">Преподаватель</label>
+                            <select asp-for="TeacherId" class="form-select" asp-items="ViewBag.Teachers" required>
+                                <option value="">-- Выберите преподавателя --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label asp-for="GroupId" class="form-label">Группа</label>
+                            <select asp-for="GroupId" class="form-select" asp-items="ViewBag.Groups" required>
+                                <option value="">-- Выберите группу --</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Semester" class="form-label">Семестр</label>
+                            <select asp-for="Semester" class="form-select" asp-items="Html.GetEnumSelectList<IIS.Domain.Enums.Semester>()" required></select>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="AcademicYear" class="form-label">Учебный год</label>
+                            <input asp-for="AcademicYear" class="form-control" placeholder="2024/2025" required />
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+                        <button type="submit" class="btn btn-success">Создать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
